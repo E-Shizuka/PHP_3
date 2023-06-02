@@ -8,8 +8,8 @@ $pdo = connect_to_db();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // 入力された検索キーワードを取得
   $pattern = $_POST['pattern'];
-  $color = $_POST['color'];
-  $cloth_color = $_POST['cloth_color'];
+  $color = isset($_POST['color']) ? $_POST['color'] : '';
+  $cloth_color = isset($_POST['cloth_color']) ? $_POST['cloth_color'] : '';;
   $hotel = $_POST['hotel'];
 
   // SQLクエリを構築
