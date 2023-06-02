@@ -22,11 +22,39 @@
       <div>
         着物の柄、モチーフ: <input type="text" name="pattern">
       </div>
-      <div>
+      <!-- <div>
         模様の色: <input type="text" name="color">
-      </div>
+      </div> -->
       <div>
+      模様の色:
+        <select name="color">
+          <option value="赤系">赤系（赤、ピンク等）</option>
+        <option value="黄色系">黄色系（黄色、オレンジ）</option>
+        <option value="緑系">緑系（緑、黄緑、青緑、オリーブ）</option>
+        <option value="青系">青系（青、水色、紺）</option>
+        <option value="紫系">紫系（紫、青紫、赤紫）</option>
+        <option value="茶色系">茶色系（茶色、ベージュ）</option>
+        <option value="黒系">黒系（黒、グレー）</option>
+          <option value="白系">白</option>
+        </select>
+        </select>
+      </div>
+      <!-- <div>
         生地の色: <input type="text" name="cloth_color">
+      </div> -->
+      <div>
+        生地の色:
+        <select name="cloth_color">
+        <option value="白系">白</option>
+        <option value="赤系">赤系（赤、ピンク等）</option>
+        <option value="黄色系">黄色系（黄色、オレンジ）</option>
+        <option value="緑系">緑系（緑、黄緑、青緑、オリーブ）</option>
+        <option value="青系">青系（青、水色、紺）</option>
+        <option value="紫系">紫系（紫、青紫、赤紫）</option>
+        <option value="茶色系">茶色系（茶色、ベージュ）</option>
+        <option value="黒系">黒系（黒、グレー）</option>
+        </select>
+        <p>※浴衣の生地は白地のものが多いです。</p>
       </div>
       <div>
         旅館: <input type="text" name="hotel">
