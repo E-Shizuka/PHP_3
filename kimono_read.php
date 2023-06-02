@@ -41,16 +41,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $output = "";
-foreach ($result as $record) {
+if (empty($result)) {
   $output .= "
     <tr>
-      <td>{$record["pattern"]}</td>
-      <td>{$record["color"]}</td>
-      <td>{$record["cloth_color"]}</td>
-      <td>{$record["hotel"]}</td>
-      </tr>
-      ";
-    }
+      <td>該当する商品はありませんでした。</td>
+    </tr>
+  ";
+} else {
+  foreach ($result as $record) {
+    $output .= "
+      <div>
+        <div><img src=\"/kimono_service/img/{$record["img_name"]}\"></div>
+        <div>着られる旅館:　{$record["hotel"]}</div>
+      </div>
+    ";
+  }
+}
     
     // <td>
     //   <a href='kimono_edit.php?id={$record["id"]}'>edit</a>
@@ -80,14 +86,9 @@ foreach ($result as $record) {
     <legend>着物検索結果</legend>
     <a href="kimono_input.php">検索画面</a>
     <table>
-      <thead>
-        <tr>
-          <th>検索結果</th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
+      <div>
+        <h2>検索結果</h2>
+      </div>
       <tbody>
         <?= $output ?>
       </tbody>
